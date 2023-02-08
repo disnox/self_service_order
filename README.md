@@ -11,6 +11,8 @@
 <a href=" " rel="nofollow"><img src="https://img.shields.io/badge/-%F0%9F%91%A8%E2%80%8D%F0%9F%92%BBC%2FC%2B%2B-blue"></a>
 <a href=" " rel="nofollow"><img src="https://img.shields.io/badge/-%F0%9F%93%9Aproject-blue"></a>
 </p>
+
+
 ## 1. 项目简介
 
 本项目是一个基于 Linux 和 C语言 的自助点餐系统。该系统提供了一个友好的图形用户界面，顾客可以方便地查看餐厅的菜单并完成点餐操作。本系统的菜单信息和订单数据储存在文本文件中，通过控制台应用程序实现。此外，该系统还提供了一些常见的管理功能，例如添加或删除菜品，查询订单状态等。总的来说，本系统旨在提高餐厅的工作效率和提升顾客的用餐体验。
@@ -93,4 +95,3 @@
 <video id="video" controls="" preload="none">
     <source id="mp4" src="E:\Code\puresoft\self_order\录屏讲解\自助点餐系统演示视频.mp4" type="video/mp4">
 </video>
-
