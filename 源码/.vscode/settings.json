@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "dir.h": "c",
+        "main.h": "c",
+        "control.h": "c",
+        "thread.h": "c",
+        "menu_info.h": "c"
+    }
+}
