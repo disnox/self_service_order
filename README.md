@@ -1,10 +1,12 @@
 <h2 align="center">
 🍽自助点餐系统
-</h2>
+</h2><br>
 <pre align="center">
  Build with 📷<a href="https://disnox.top">disnox</a> 
 </pre>
+
 <p align="center">
+<br>
 <a href="https://www.disnox.top/project">🖥 More Items</a>
 <br>
 <a href=" " rel="nofollow"><img src="https://img.shields.io/badge/-%F0%9F%92%BBLinux-blue"></a>
