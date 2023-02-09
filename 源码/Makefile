@@ -11,7 +11,7 @@ CFLAGS	:= #-Wall -Wextra -g
 
 # 除了 /usr/lib 之外，还定义库路径
 # 如果我想包含不在 /usr/lib 中的库，我会使用 -Lpath 指定它们的路径，例如：
-LFLAGS = -L ./lib -lfont -pthread
+LFLAGS = -pthread
 
 # 定义源目录
 SRC		:= src
@@ -34,8 +34,15 @@ BINDIRS		:= $(shell find $(BIN) -type d)
 OBJDIRS		:= $(shell find $(OBJ) -type d)
 FIXPATH = $1
 RM = rm -f
-MD	:= mkdir -p
+MD	:= mkdir -p 
 
+# 创建必要的文件夹
+create-dirs:
+	if [ ! -d "$(SRC)" ]; then $(MD) $(SRC); fi
+	if [ ! -d "$(INC)" ]; then $(MD) $(INC); fi
+	if [ ! -d "$(BIN)" ]; then $(MD) $(BIN); fi
+	if [ ! -d "$(OBJ)" ]; then $(MD) $(OBJ); fi
+	if [ ! -d "$(LIB)" ]; then $(MD) $(LIB); fi
 
 # 定义任何包含头文件的目录（除了 /usr/inc）
 INCLUDES	:= $(patsubst %,-I%, $(INCLUDEDIRS:%/=%))
@@ -61,7 +68,8 @@ all: $(OUTPUT) $(MAIN)
 $(OUTPUT):
 	$(MD) $(OUTPUT)
 
-$(MAIN): $(OBJECTS_INOBJ) 
+# 在执行前先调用 create-dirs 目标
+$(MAIN): create-dirs $(OBJECTS_INOBJ) 
 	$(CC) $(CFLAGS) $(INCLUDES) -o $(BINMAIN) $(OBJECTS_INOBJ) $(LFLAGS) $(LIBS)
 
 $(OBJ)/%.o: $(SRC)/%.c
